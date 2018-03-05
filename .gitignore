@@ -46,6 +46,12 @@ typings/
 # Compiled SCSS files
 src/**/*.css
 
+# Compiled files
+public/bundle.js
+public/bundle.js.map
+public/styles.js
+public/styles.js.map
+
 # Optional eslint cache
 .eslintcache
 
