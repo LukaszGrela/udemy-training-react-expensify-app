@@ -32,7 +32,8 @@ test('Rendered correct message for 0 expenses', () => {
         expensesCount,
         expenseTotal
     });
-    const expected = `Viewing ${expensesCount} expense${expensesCount !== 1 ? 's' : ''} totalling ${expenseTotal}`;
+    const expenseTotalLabel = numeral(expenseTotal / 100).format('$0,0.00');
+    const expected = `Viewing ${expensesCount} expense${expensesCount !== 1 ? 's' : ''} totalling ${expenseTotalLabel}`;
 
     expect(wrapper.text()).toBe(expected);
 });
@@ -44,7 +45,8 @@ test('Rendered correct message for 1 expense', () => {
         expensesCount,
         expenseTotal
     });
-    const expected = `Viewing ${expensesCount} expense${expensesCount !== 1 ? 's' : ''} totalling ${expenseTotal}`;
+    const expenseTotalLabel = numeral(expenseTotal / 100).format('$0,0.00');
+    const expected = `Viewing ${expensesCount} expense${expensesCount !== 1 ? 's' : ''} totalling ${expenseTotalLabel}`;
 
     expect(wrapper.text()).toBe(expected);
 });
@@ -56,7 +58,8 @@ test('Rendered correct message for 1 expense', () => {
         expensesCount,
         expenseTotal
     });
-    const expected = `Viewing ${expensesCount} expense${expensesCount !== 1 ? 's' : ''} totalling ${expenseTotal}`;
+    const expenseTotalLabel = numeral(expenseTotal / 100).format('$0,0.00');
+    const expected = `Viewing ${expensesCount} expense${expensesCount !== 1 ? 's' : ''} totalling ${expenseTotalLabel}`;
 
     expect(wrapper.text()).toBe(expected);
 });

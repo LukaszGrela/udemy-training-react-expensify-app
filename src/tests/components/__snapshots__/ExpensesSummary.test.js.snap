@@ -4,7 +4,7 @@ exports[`Rendered correctly 1`] = `
 <div
   className="expenses-summary"
 >
-  Viewing 5 expenses totalling 125459
+  Viewing 5 expenses totalling $1,254.59
 </div>
 `;
 
@@ -12,6 +12,6 @@ exports[`Rendered correctly with 1 expense 1`] = `
 <div
   className="expenses-summary"
 >
-  Viewing 1 expense totalling 1
+  Viewing 1 expense totalling $0.01
 </div>
 `;
