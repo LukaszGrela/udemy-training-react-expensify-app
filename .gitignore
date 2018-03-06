@@ -47,9 +47,7 @@ typings/
 src/**/*.css
 
 # Compiled files
-public/bundle.js
-public/styles.css
-public/**/*.map
+public/dist/
 
 # Optional eslint cache
 .eslintcache
