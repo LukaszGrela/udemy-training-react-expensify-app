@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendered correctly 1`] = `
+<div
+  className="expenses-summary"
+>
+  Viewing 5 expenses totalling 125459
+</div>
+`;
+
+exports[`Rendered correctly with 1 expense 1`] = `
+<div
+  className="expenses-summary"
+>
+  Viewing 1 expense totalling 1
+</div>
+`;
