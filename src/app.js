@@ -12,6 +12,8 @@ import { addExpense } from './actions/expenses';
 import 'normalize.css/normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
 
+import './firebase/firebase.js'
+
 import './styles/styles.scss';
 
 const store = configureStore();
