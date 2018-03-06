@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
   return {
     entry: './src/app.js',
     output: {
-      path: path.join(__dirname, 'public'),
+      path: path.join(__dirname, 'public', 'dist'),
       filename: 'bundle.js'
     },
     module: {
@@ -20,16 +20,16 @@ module.exports = (env, argv) => {
       }, {
         test: /\.s?css$/,
         use: CSSExtract.extract({
-          use:[
+          use: [
             {
-              loader:'css-loader',
+              loader: 'css-loader',
               options: {
                 sourceMap: true
               }
             },
             {
-              loader:'sass-loader',
-              options:{
+              loader: 'sass-loader',
+              options: {
                 sourceMap: true
               }
             }
@@ -40,10 +40,11 @@ module.exports = (env, argv) => {
     plugins: [
       CSSExtract
     ],
-    devtool: isProd ? 'source-map':'inline-source-map',
+    devtool: isProd ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
-      historyApiFallback: true
+      historyApiFallback: true,
+      publicPath: '/dist/'
     }
   }
 };
