@@ -63,4 +63,6 @@ public/dist/
 
 # dotenv environment variables file
 .env
+.env.test
+.env.development
 
