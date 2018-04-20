@@ -18,8 +18,9 @@ beforeEach(() => {
             expense={expenses[0]}
             editExpense={editExpense}
             removeExpense={removeExpense}
-            history={history} />
-    );
+            history={history} 
+            />);
+
     modifiedExpense = { note: 'my note', amount: 99000 };
 })
 
@@ -27,7 +28,7 @@ beforeEach(() => {
 test('should render EditExpensePage correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
-// 
+
 // spies
 test('should handle editExpense', () => {
     wrapper.find('ExpenseForm').prop('onSubmit')(modifiedExpense);

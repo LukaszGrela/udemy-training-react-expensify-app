@@ -7,7 +7,7 @@ exports[`should render NotFoundPage correctly 1`] = `
     replace={false}
     to="/"
   >
-    Go Home
+    ET Go Home
   </Link>
 </div>
 `;

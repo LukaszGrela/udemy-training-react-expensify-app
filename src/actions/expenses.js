@@ -1,5 +1,6 @@
 import database from '../firebase/firebase';
-import { ECHILD } from 'constants';
+
+const dbExpenses = _ => database.ref('expenses');
 
 // ADD_EXPENSE
 export const addExpense = (expense) => ({
@@ -35,6 +36,19 @@ export const removeExpense = ({ id } = {}) => ({
     type: 'REMOVE_EXPENSE',
     id
 });
+
+export const startRemoveExpense = ({ id } = {}) => {
+    return (dispatch) => {
+        return dbExpenses().child(id).remove().then(() => {
+            dispatch(removeExpense({ id }));
+        });
+    };
+};
+// 1. Create startRemoveExpene
+// 2. Test startRemoveExpense with 'should remove expenses from firebase'
+// 3. Use startRemoveExpense in EditExpensePage instead of removeExpense
+// 4. Adjust EditExpensePage tests
+
 // EDIT_EXPENSE
 export const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
@@ -55,7 +69,7 @@ export const startSetExpenses = () => {
                 const expenses = [];
                 snapshot.forEach(child => {
                     expenses.push({
-                        id:child.key,
+                        id: child.key,
                         ...child.val()
                     });
                 });
