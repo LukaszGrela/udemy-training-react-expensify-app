@@ -44,10 +44,6 @@ export const startRemoveExpense = ({ id } = {}) => {
         });
     };
 };
-// 1. Create startRemoveExpene
-// 2. Test startRemoveExpense with 'should remove expenses from firebase'
-// 3. Use startRemoveExpense in EditExpensePage instead of removeExpense
-// 4. Adjust EditExpensePage tests
 
 // EDIT_EXPENSE
 export const editExpense = (id, updates) => ({
@@ -55,6 +51,18 @@ export const editExpense = (id, updates) => ({
     id,
     updates
 });
+// 1. Create startEditExpense
+// 2. Test startEditExpense with 'should remove expenses from firebase'
+// 3. Use startEditExpense in EditExpensePage instead of removeExpense
+// 4. Adjust EditExpensePage tests
+
+export const startEditExpense = (id, updates) => {
+    return dispatch => {
+        return dbExpenses().child(id).update(updates).then(() => {
+            dispatch(editExpense(id, updates));
+        });
+    };
+};
 
 // SET_EXPENSES
 export const setExpenses = (expenses) => ({

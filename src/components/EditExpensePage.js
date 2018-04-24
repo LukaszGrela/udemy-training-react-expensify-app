@@ -4,7 +4,8 @@ import ExpenseForm from './ExpenseForm';
 import {
     editExpense,
     removeExpense,
-    startRemoveExpense
+    startRemoveExpense,
+    startEditExpense
 } from '../actions/expenses';
 
 
@@ -49,7 +50,7 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(startRemoveExpense(data));
     },
     editExpense: (id, updates) => {
-        dispatch(editExpense(id, updates));
+        dispatch(startEditExpense(id, updates));
     }
 });
 
