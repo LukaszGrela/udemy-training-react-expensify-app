@@ -51,10 +51,6 @@ export const editExpense = (id, updates) => ({
     id,
     updates
 });
-// 1. Create startEditExpense
-// 2. Test startEditExpense with 'should remove expenses from firebase'
-// 3. Use startEditExpense in EditExpensePage instead of removeExpense
-// 4. Adjust EditExpensePage tests
 
 export const startEditExpense = (id, updates) => {
     return dispatch => {
